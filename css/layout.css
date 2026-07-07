@@ -189,4 +189,8 @@
   .statg { grid-template-columns: 1fr; gap: 28px; }
   .shead { flex-direction: column; align-items: flex-start; gap: 16px; }
   .fgrid { grid-template-columns: 1fr; gap: 44px; }
+  /* La portada trae el nombre incrustado; a ancho movil, object-fit:cover
+     recortaba los lados. Mostrarla completa a su proporcion natural. */
+  .band { height: auto; }
+  .band .cimg { height: auto; }
 }
