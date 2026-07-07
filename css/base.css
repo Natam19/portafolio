@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Base: reset ligero, tokens de diseño y temas (claro / oscuro).
+   Las variables viven en .pg para poder alternar el tema por clase.
+   El color de acento (--ac) se inyecta desde JS (theme.js).
+   ========================================================================== */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #EFF1F6;
+}
+
+a { color: inherit; }
+a:hover { color: var(--ac, #315BFF); }
+
+/* --- Contenedor raíz + tokens de tema --- */
+.pg {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+  --bg: #EFF1F6;
+  --ink: #10142E;
+  --card: #F8F9FD;
+  --line: rgba(16, 20, 46, .14);
+  --mut: rgba(16, 20, 46, .64);
+  --ac: #315BFF;
+  transition: background .3s, color .3s;
+}
+
+.pg.dark {
+  --bg: #0A0E24;
+  --ink: #E9EBF5;
+  --card: #141A3C;
+  --line: rgba(233, 235, 245, .15);
+  --mut: rgba(233, 235, 245, .62);
+}
+
+.dark a:hover { color: color-mix(in oklab, var(--ac, #315BFF) 50%, white); }
+
+/* --- Tipografía de titulares --- */
+.h1 {
+  font-size: clamp(52px, 7.2vw, 102px);
+  line-height: .99;
+  letter-spacing: -.035em;
+  font-weight: 600;
+  margin: 0;
+  text-wrap: balance;
+}
+.h2 {
+  font-size: clamp(36px, 4.4vw, 62px);
+  line-height: 1.02;
+  letter-spacing: -.028em;
+  font-weight: 600;
+  margin: 0;
+  text-wrap: balance;
+}
+.it {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -.01em;
+}
+
+/* Etiqueta de sección (kicker) */
+.lbl {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ac, #315BFF);
+  margin: 0 0 22px;
+}
+.dark .lbl { color: color-mix(in oklab, var(--ac, #315BFF) 50%, white); }
+
+.fw6 { font-weight: 600; }
+.mt16 { margin-top: 16px; }

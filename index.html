@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Natalia Moncaleano — Portafolio</title>
+  <meta name="description" content="Desarrolladora de Software — Front-End &amp; UX, IA y Ciberseguridad. Bogotá, Colombia.">
+
+  <!-- Hojas de estilo modulares -->
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+  <div class="pg" id="top">
+
+    <!-- ============================ Cabecera ============================ -->
+    <header class="hdr">
+      <div class="wrap hin">
+        <a class="lg" href="#top">nm<span class="lgd">./</span></a>
+        <nav class="hnav">
+          <a class="nl" href="#proyectos">Proyectos</a>
+          <a class="nl" href="#experiencia">Experiencia</a>
+          <a class="nl" href="#formacion">Formación</a>
+          <a class="nl" href="#contacto">Contacto</a>
+        </nav>
+        <div class="hactions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Cambiar tema">☾</button>
+          <a class="pill sm" href="mailto:nattymoncaleanomontero@gmail.com">Escríbeme</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================== Hero ============================== -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="lbl">Front-End &amp; UX · Inteligencia Artificial · Ciberseguridad</p>
+        <h1 class="h1">Construyo software seguro, inteligente y <span class="it">hecho para personas.</span></h1>
+        <p class="sub">Soy Natalia Moncaleano — desarrolladora de software en Bogotá, estudiante de Ingeniería de Sistemas y desarrolladora web para el mercado internacional. Traduzco requerimientos complejos en productos funcionales, combinando UX y arquitectura de la información con IA, ciberseguridad y análisis de datos.</p>
+        <div class="cta">
+          <a class="pill" href="mailto:nattymoncaleanomontero@gmail.com">Trabajemos juntos</a>
+          <a class="ghost" href="#proyectos">Ver proyectos ↓</a>
+        </div>
+        <div class="meta">
+          <span class="chip">Bogotá, Colombia</span>
+          <a class="chip" href="tel:+573053843369">+57 305 384 3369</a>
+          <a class="chip" href="mailto:nattymoncaleanomontero@gmail.com">nattymoncaleanomontero@gmail.com</a>
+        </div>
+        <div class="band">
+          <img class="cimg" src="assets/images/hero.png" alt="Portada del portafolio de Natalia Moncaleano">
+        </div>
+      </div>
+
+      <!-- Marquesina de tecnologías (poblada por JS) -->
+      <div class="mq"><div id="skills-marquee"></div></div>
+    </section>
+
+    <!-- =========================== Proyectos =========================== -->
+    <section class="sec bord" id="proyectos">
+      <div class="wrap">
+        <div class="shead">
+          <div>
+            <p class="lbl">Proyectos destacados</p>
+            <h2 class="h2">Ideas que ya son <span class="it">producto</span></h2>
+          </div>
+          <p class="shp">Cinco proyectos, cinco problemas reales: salud, seguridad de la información, datos masivos y territorio.</p>
+        </div>
+        <!-- Tarjetas pobladas por JS desde js/data/projects.js -->
+        <div class="pgrid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- ========================== Cómo trabajo ========================= -->
+    <section class="sec bord">
+      <div class="wrap statg">
+        <div>
+          <p class="lbl">Cómo trabajo</p>
+          <h2 class="h2">Del requerimiento <span class="it">al deploy</span></h2>
+        </div>
+        <p class="bigp">Entro a cada proyecto con una idea simple: si no es usable, no escala. Del análisis de requerimientos a la arquitectura de la información, del prototipo al código — construyo soluciones prácticas, seguras y pensadas para quien las usa.</p>
+      </div>
+    </section>
+
+    <!-- ========================== Experiencia ========================== -->
+    <section class="sec bord" id="experiencia">
+      <div class="wrap">
+        <div class="shead">
+          <div>
+            <p class="lbl">Experiencia</p>
+            <h2 class="h2">De la academia <span class="it">a producción</span></h2>
+          </div>
+        </div>
+        <!-- Filas pobladas por JS desde js/data/site.js -->
+        <div id="experience-list"></div>
+      </div>
+    </section>
+
+    <!-- =========================== Formación =========================== -->
+    <section class="sec bord" id="formacion">
+      <div class="wrap">
+        <div class="shead">
+          <div>
+            <p class="lbl">Formación</p>
+            <h2 class="h2">Siempre <span class="it">aprendiendo</span></h2>
+          </div>
+        </div>
+        <div class="fgrid">
+          <div>
+            <h3 class="colh">Educación</h3>
+            <div id="education-list"></div>
+          </div>
+          <div>
+            <h3 class="colh">Certificaciones e idiomas</h3>
+            <div id="certifications-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ Contacto =========================== -->
+    <footer class="sec" id="contacto">
+      <div class="wrap">
+        <p class="lbl">Contacto</p>
+        <h2 class="h1">¿Creamos algo <span class="it">juntos?</span></h2>
+        <div class="cta">
+          <a class="pill" href="mailto:nattymoncaleanomontero@gmail.com">Escríbeme</a>
+          <a class="ghost" href="tel:+573053843369">+57 305 384 3369</a>
+        </div>
+        <div class="fbot">
+          <span>Bogotá, Colombia</span>
+          <span>nattymoncaleanomontero@gmail.com</span>
+          <span>© <span id="footer-year">2026</span> Natalia Moncaleano Montero</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Lógica de la aplicación (módulos ES) -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
