@@ -14,6 +14,8 @@
   padding: 44px 24px;
   overflow: auto;
 }
+/* El display:flex de arriba pisa el atributo [hidden]; forzar el ocultado real. */
+.ovl[hidden] { display: none; }
 
 .mod {
   max-width: 860px;

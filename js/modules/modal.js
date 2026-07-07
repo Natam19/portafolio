@@ -22,7 +22,9 @@ function ensureOverlay() {
     if (e.key === 'Escape') closeModal();
   });
 
-  document.body.appendChild(overlay);
+  // Montar dentro de .pg para heredar los design tokens y el tema (claro/oscuro),
+  // que estan definidos en .pg y no en :root.
+  (document.querySelector('.pg') || document.body).appendChild(overlay);
   return overlay;
 }
 
