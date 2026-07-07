@@ -191,6 +191,15 @@
   .fgrid { grid-template-columns: 1fr; gap: 44px; }
   /* La portada trae el nombre incrustado; a ancho movil, object-fit:cover
      recortaba los lados. Mostrarla completa a su proporcion natural. */
-  .band { height: auto; }
+  .band { height: auto; margin-top: 40px; }
   .band .cimg { height: auto; }
+}
+
+/* Ajuste fino de ritmo vertical en pantallas de telefono: el padding de
+   escritorio (100/110px por seccion) dejaba huecos muertos muy grandes. */
+@media (max-width: 640px) {
+  .wrap { padding: 0 22px; }
+  .hero { padding: 72px 0 0; }
+  .sec { padding: 56px 0 60px; }
+  .shead { margin-bottom: 32px; }
 }
