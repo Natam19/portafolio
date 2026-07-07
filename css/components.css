@@ -90,6 +90,13 @@
 .sp2 { grid-column: span 2; }
 .sp3 { grid-column: span 3; }
 
+/* En movil las tarjetas se apilan a ancho completo. Va aqui (no en layout.css)
+   porque components.css se carga despues y su regla base pisaria el colapso. */
+@media (max-width: 920px) {
+  .pgrid { grid-template-columns: 1fr; }
+  .sp2, .sp3 { grid-column: auto; }
+}
+
 .pcard {
   background: var(--card);
   border: 1px solid var(--line);
