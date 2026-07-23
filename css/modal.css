@@ -100,6 +100,22 @@
   font-weight: 700;
 }
 
+.mlive {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 26px;
+  padding: 13px 24px;
+  border-radius: 999px;
+  background: var(--ac, #315BFF);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 650;
+  text-decoration: none;
+  transition: transform .18s ease, opacity .18s ease;
+}
+.mlive:hover { transform: translateY(-2px); opacity: .92; }
+
 @media (max-width: 640px) {
   .mbody { padding: 28px 24px 34px; }
   .mhead { height: 200px; }

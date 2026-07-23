@@ -13,6 +13,8 @@
  *   image     Ruta de la portada (relativa a index.html).
  *   summary   Descripción corta de la tarjeta.
  *   tags      Tecnologías mostradas en la tarjeta.
+ *   url       (opcional) Enlace a la demo en vivo. Si existe, el modal muestra
+ *             un botón "Ver en vivo".
  *   detail    Contenido del modal:
  *               role     Rol · contexto · fecha.
  *               intro    Párrafo introductorio.
@@ -46,6 +48,7 @@ export const projects = [
     year: '2026',
     span: 'sp2',
     image: 'assets/images/iso-secure.png',
+    url: 'https://iso-secure.agustinynatalia.site',
     summary: 'Plataforma SGSI conforme a ISO/IEC 27001:2022 — KPIs, incidentes, controles, riesgos y auditoría. Modelado de amenazas con PASTA + STRIDE sobre API REST en capas.',
     tags: ['React', 'FastAPI', 'PostgreSQL', 'JWT + RBAC'],
     detail: {
