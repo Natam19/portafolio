@@ -62,8 +62,8 @@
 .mq {
   overflow: hidden;
   border-bottom: 1px solid var(--line);
-  padding: 20px 0;
-  margin-top: 72px;
+  padding: 18px 0;
+  margin-top: 48px;
 }
 .mqi {
   display: flex;
@@ -90,11 +90,33 @@
 .sp2 { grid-column: span 2; }
 .sp3 { grid-column: span 3; }
 
-/* En movil las tarjetas se apilan a ancho completo. Va aqui (no en layout.css)
-   porque components.css se carga despues y su regla base pisaria el colapso. */
+/* En movil los proyectos pasan a galeria horizontal deslizable (scroll-snap),
+   en vez de un scroll vertical largo. Se ve un asomo de la tarjeta siguiente
+   para indicar que se puede deslizar. Va aqui (no en layout.css) porque
+   components.css se carga despues y su regla base pisaria el colapso. */
 @media (max-width: 920px) {
-  .pgrid { grid-template-columns: 1fr; }
+  .pgrid {
+    display: flex;
+    flex-wrap: nowrap;
+    grid-template-columns: none;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 14px;
+    scrollbar-width: none;
+  }
+  .pgrid::-webkit-scrollbar { display: none; }
+  .pcard {
+    flex: 0 0 84%;
+    scroll-snap-align: center;
+  }
   .sp2, .sp3 { grid-column: auto; }
+  /* En galeria el hover-lift no aplica (es tactil); evita saltos al deslizar. */
+  .pcard:hover { transform: none; }
+  /* En movil se ocultan los tags: la tarjeta queda mas baja, solo con la
+     descripcion breve. Los tags siguen visibles en el modal de detalle. */
+  .pcard .tags { display: none; }
 }
 
 .pcard {
@@ -105,12 +127,21 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+.pcard:hover {
+  transform: translateY(-6px);
+  border-color: color-mix(in srgb, var(--ac, #6D4AFF) 55%, var(--line));
+  box-shadow: 0 22px 48px -24px color-mix(in srgb, var(--ac, #6D4AFF) 60%, transparent);
 }
 .shot {
   height: 225px;
   border-radius: 14px;
   overflow: hidden;
 }
+.shot .cimg { transition: transform .55s cubic-bezier(.2,.7,.2,1); }
+.pcard:hover .shot .cimg { transform: scale(1.05); }
+.pcard:hover .more { color: color-mix(in srgb, var(--ac, #6D4AFF) 80%, var(--ink)); }
 .pinf {
   padding: 0 10px;
   display: flex;
@@ -125,8 +156,9 @@
   gap: 12px;
 }
 .pt {
-  font-size: 22px;
-  font-weight: 600;
+  font-family: var(--font-head);
+  font-size: 21px;
+  font-weight: 500;
   letter-spacing: -.015em;
 }
 .py {

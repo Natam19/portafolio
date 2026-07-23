@@ -9,12 +9,13 @@ import {
   renderExperience,
   renderFormation,
 } from './modules/sections.js';
+import { initReveal } from './modules/reveal.js';
 
 function init() {
   const page = document.getElementById('top');
 
   // Apariencia.
-  setAccent('#315BFF');
+  setAccent('#6D4AFF');
   initTheme(page, document.getElementById('theme-toggle'));
 
   // Contenido dinámico.
@@ -29,6 +30,9 @@ function init() {
   // Año dinámico en el pie.
   const yearEl = document.getElementById('footer-year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  // Aparición al hacer scroll (respeta prefers-reduced-motion).
+  initReveal();
 }
 
 if (document.readyState === 'loading') {

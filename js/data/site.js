@@ -16,10 +16,10 @@ export const profile = {
 
 /** Tecnologías que recorren la marquesina del hero. */
 export const skills = [
-  'Python', 'SQL', 'Java', 'React', 'FastAPI', 'PostgreSQL / PostGIS',
-  'WordPress', 'SEO', 'UX / UI', 'Arquitectura de la información',
-  'Inteligencia Artificial', 'Ciberseguridad', 'n8n', 'Apache Spark',
-  'AWS', 'Docker', 'Power BI', 'Scikit-learn',
+  'Power BI', 'Excel avanzado', 'MySQL', 'SQL', 'Azure', 'Python',
+  'Apache Spark', 'Scikit-learn', 'Inteligencia Artificial', 'Ciberseguridad',
+  'PostgreSQL / PostGIS', 'FastAPI', 'Docker', 'AWS', 'n8n',
+  'Java', 'React', 'UX / UI', 'SEO',
 ];
 
 /** Experiencia profesional (orden cronológico inverso). */
