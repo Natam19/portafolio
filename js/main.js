@@ -2,14 +2,14 @@
  * Punto de entrada. Inicializa el tema y renderiza las secciones
  * alimentadas por datos cuando el DOM está listo.
  */
-import { initTheme, setAccent } from './modules/theme.js';
+import { initTheme, setAccent } from './modules/theme.js?v=20261102';
 import {
   renderSkills,
   renderProjects,
   renderExperience,
   renderFormation,
-} from './modules/sections.js';
-import { initReveal } from './modules/reveal.js';
+} from './modules/sections.js?v=20261102';
+import { initReveal } from './modules/reveal.js?v=20261102';
 
 function init() {
   const page = document.getElementById('top');

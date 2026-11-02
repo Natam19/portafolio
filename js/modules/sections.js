@@ -2,10 +2,10 @@
  * Render de las secciones alimentadas por datos: marquesina de skills,
  * rejilla de proyectos, experiencia y formación.
  */
-import { el, mount } from './dom.js';
-import { openModal } from './modal.js';
-import { projects } from '../data/projects.js';
-import { skills, experience, education, certifications } from '../data/site.js';
+import { el, mount } from './dom.js?v=20261102';
+import { openModal } from './modal.js?v=20261102';
+import { projects } from '../data/projects.js?v=20261102';
+import { skills, experience, education, certifications } from '../data/site.js?v=20261102';
 
 /** Marquesina de tecnologías (duplicada para el bucle infinito). */
 export function renderSkills(target) {
