@@ -308,3 +308,11 @@
   .step:not(:last-child)::after { display: none; }
 }
 @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+/* --- La etiqueta de disponibilidad siempre en su propia línea --- */
+.avail { display: flex; width: fit-content; }
+
+/* --- Celular: que el marco de la foto no se salga por el borde --- */
+@media (max-width: 920px) {
+  .hphoto { margin-left: 14px; margin-top: 8px; }
+}

@@ -237,3 +237,12 @@
 .dark .post { box-shadow: none; }
 @media (max-width: 920px) { .postgrid { grid-template-columns: 1fr; } }
 @media (max-width: 520px) { .post { grid-template-columns: 110px 1fr; gap: 16px; } .postt { font-size: 18px; } }
+
+/* --- Ajustes de contraste en modo oscuro --- */
+.dark .more,
+.dark .pcard:hover .more { color: #C4B5FD; }
+.dark .ghost { border-bottom-color: #C4B5FD; }
+.dark .lgd { color: #C4B5FD; }
+/* Las ilustraciones claras brillan mucho sobre fondo oscuro: se atenúan un poco. */
+.dark .shot .cimg { filter: brightness(.86); }
+.dark .shot .cimg[src$=".png"] { filter: hue-rotate(28deg) saturate(1.05) brightness(.86); }
