@@ -8,11 +8,11 @@
 
 body {
   margin: 0;
-  background: #EFF1F6;
+  background: #F6F4FD;
 }
 
 a { color: inherit; }
-a:hover { color: var(--ac, #315BFF); }
+a:hover { color: var(--ac, #7C3AED); }
 
 /* --- Contenedor raíz + tokens de tema --- */
 .pg {
@@ -21,33 +21,33 @@ a:hover { color: var(--ac, #315BFF); }
   color: var(--ink);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
-  --bg: #EFF1F6;
-  --ink: #10142E;
-  --card: #F8F9FD;
-  --line: rgba(16, 20, 46, .14);
-  --mut: rgba(16, 20, 46, .64);
-  --ac: #315BFF;
-  --font-head: 'Space Grotesk', 'Inter', sans-serif;
+  --bg: #F6F4FD;
+  --ink: #170F36;
+  --card: #FFFFFF;
+  --line: rgba(23, 15, 54, .12);
+  --mut: rgba(23, 15, 54, .64);
+  --ac: #7C3AED;
+  --font-head: 'Poppins', 'Inter', sans-serif;
   transition: background .3s, color .3s;
 }
 
 .pg.dark {
-  --bg: #0A0E24;
-  --ink: #E9EBF5;
-  --card: #141A3C;
-  --line: rgba(233, 235, 245, .15);
-  --mut: rgba(233, 235, 245, .62);
+  --bg: #120F26;
+  --ink: #EEEAFB;
+  --card: #1E1940;
+  --line: rgba(238, 234, 251, .14);
+  --mut: rgba(238, 234, 251, .64);
 }
 
-.dark a:hover { color: color-mix(in oklab, var(--ac, #315BFF) 50%, white); }
+.dark a:hover { color: color-mix(in oklab, var(--ac, #7C3AED) 50%, white); }
 
 /* --- Tipografía de titulares --- */
 .h1 {
   font-family: var(--font-head);
   font-size: clamp(33px, 4.2vw, 56px);
   line-height: 1.06;
-  letter-spacing: -.024em;
-  font-weight: 500;
+  letter-spacing: -.03em;
+  font-weight: 600;
   margin: 0;
   text-wrap: balance;
 }
@@ -55,8 +55,8 @@ a:hover { color: var(--ac, #315BFF); }
   font-family: var(--font-head);
   font-size: clamp(28px, 3vw, 42px);
   line-height: 1.07;
-  letter-spacing: -.022em;
-  font-weight: 500;
+  letter-spacing: -.028em;
+  font-weight: 600;
   margin: 0;
   text-wrap: balance;
 }
@@ -65,7 +65,13 @@ a:hover { color: var(--ac, #315BFF); }
   font-style: italic;
   font-weight: 400;
   letter-spacing: -.005em;
+  background: linear-gradient(100deg, var(--ac, #7C3AED) 0%, #C026D3 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding-right: .06em;
 }
+.dark .it { background-image: linear-gradient(100deg, #C4B5FD 0%, #F0ABFC 100%); }
 
 /* Etiqueta de sección (kicker) */
 .lbl {
@@ -77,7 +83,7 @@ a:hover { color: var(--ac, #315BFF); }
   font-weight: 500;
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: var(--ac, #315BFF);
+  color: var(--ac, #7C3AED);
   margin: 0 0 20px;
 }
 /* Punto guía antes del kicker, para anclar visualmente cada sección. */
@@ -89,7 +95,7 @@ a:hover { color: var(--ac, #315BFF); }
   background: currentColor;
   flex: 0 0 auto;
 }
-.dark .lbl { color: color-mix(in oklab, var(--ac, #315BFF) 50%, white); }
+.dark .lbl { color: color-mix(in oklab, var(--ac, #7C3AED) 50%, white); }
 
 .fw6 { font-weight: 600; }
 .mt16 { margin-top: 16px; }

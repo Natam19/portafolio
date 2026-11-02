@@ -8,7 +8,7 @@
  */
 
 const STORAGE_KEY = 'nm-portfolio-theme';
-const DEFAULT_ACCENT = '#315BFF';
+const DEFAULT_ACCENT = '#7C3AED';
 
 /** Aplica el color de acento a toda la página. */
 export function setAccent(color = DEFAULT_ACCENT) {

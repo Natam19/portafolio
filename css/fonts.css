@@ -1,12 +1,12 @@
 /* ==========================================================================
    Tipografías. Sistema editorial:
-     · Space Grotesk  → titulares (técnico, geométrico)
+     · Poppins        → titulares (geométrica, redondeada, cercana)
      · Inter          → cuerpo e interfaz (neutro, profesional)
      · Fraunces       → acentos en cursiva (serif óptica, con carácter)
    En preview se cargan desde Google Fonts; en producción conviene
    self-hostear los woff2 (los locales de abajo quedan como respaldo).
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&display=swap');
 
 
 /* ---- Archivo (400 / 500 / 600 / 700) ---- */

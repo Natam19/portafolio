@@ -48,7 +48,6 @@ export const projects = [
     year: '2026',
     span: 'sp2',
     image: 'assets/images/iso-secure.png',
-    url: 'https://iso-secure.agustinynatalia.site',
     summary: 'Plataforma SGSI conforme a ISO/IEC 27001:2022 — KPIs, incidentes, controles, riesgos y auditoría. Modelado de amenazas con PASTA + STRIDE sobre API REST en capas.',
     tags: ['React', 'FastAPI', 'PostgreSQL', 'JWT + RBAC'],
     detail: {
