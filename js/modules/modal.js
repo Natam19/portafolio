@@ -30,7 +30,7 @@ function ensureOverlay() {
 
 /** Abre el modal con el proyecto indicado. */
 export function openModal(project) {
-  const { title, image, detail, url } = project;
+  const { title, image, detail, url, repo } = project;
   const box = ensureOverlay();
 
   const card = el('div', { class: 'mod' }, [
@@ -49,12 +49,20 @@ export function openModal(project) {
       el('div', { class: 'tags mt16' }, detail.tags.map((t) =>
         el('span', { class: 'tag', text: t })
       )),
-      url ? el('a', {
-        class: 'mlive',
-        href: url,
-        target: '_blank',
-        rel: 'noopener noreferrer',
-      }, ['Ver en vivo ↗']) : null,
+      (url || repo) ? el('div', { class: 'mlinks' }, [
+        url ? el('a', {
+          class: 'mlive',
+          href: url,
+          target: '_blank',
+          rel: 'noopener noreferrer',
+        }, ['Ver en vivo ↗']) : null,
+        repo ? el('a', {
+          class: 'mlive mcode',
+          href: repo,
+          target: '_blank',
+          rel: 'noopener noreferrer',
+        }, ['Ver código ↗']) : null,
+      ]) : null,
     ]),
   ]);
 

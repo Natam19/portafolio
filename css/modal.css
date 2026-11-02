@@ -115,6 +115,10 @@
   transition: transform .18s ease, opacity .18s ease;
 }
 .mlive:hover { transform: translateY(-2px); opacity: .92; }
+.mlinks { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.mlinks .mlive { margin-top: 0; }
+.mcode { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
+.mcode:hover { border-color: var(--ac, #7C3AED); }
 
 @media (max-width: 640px) {
   .mbody { padding: 28px 24px 34px; }

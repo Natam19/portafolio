@@ -15,7 +15,7 @@ function init() {
   const page = document.getElementById('top');
 
   // Apariencia.
-  setAccent('#6D4AFF');
+  setAccent('#7C3AED');
   initTheme(page, document.getElementById('theme-toggle'));
 
   // Contenido dinámico.

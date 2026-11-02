@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <rect width="600" height="300" fill="#1E1940"/>
+  <circle cx="170" cy="150" r="82" fill="none" stroke="#2A2259" stroke-width="18"/>
+  <circle cx="170" cy="150" r="82" fill="none" stroke="#A78BFA" stroke-width="18" stroke-linecap="round"
+          stroke-dasharray="402 515" transform="rotate(-90 170 150)"/>
+  <text x="170" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#FFFFFF">78%</text>
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(320 70)">
+      <rect width="210" height="38" rx="10" fill="#2A2259"/><circle cx="22" cy="19" r="9" fill="#2DD4BF"/>
+      <rect x="44" y="14" width="120" height="10" rx="5" fill="#C4B5FD" opacity=".7"/>
+    </g>
+    <g transform="translate(320 130)">
+      <rect width="210" height="38" rx="10" fill="#2A2259"/><circle cx="22" cy="19" r="9" fill="#2DD4BF"/>
+      <rect x="44" y="14" width="90" height="10" rx="5" fill="#C4B5FD" opacity=".7"/>
+    </g>
+    <g transform="translate(320 190)">
+      <rect width="210" height="38" rx="10" fill="#2A2259"/><circle cx="22" cy="19" r="9" fill="#F472B6"/>
+      <rect x="44" y="14" width="140" height="10" rx="5" fill="#C4B5FD" opacity=".7"/>
+    </g>
+  </g>
+</svg>

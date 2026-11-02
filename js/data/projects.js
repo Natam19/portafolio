@@ -15,6 +15,8 @@
  *   tags      Tecnologías mostradas en la tarjeta.
  *   url       (opcional) Enlace a la demo en vivo. Si existe, el modal muestra
  *             un botón "Ver en vivo".
+ *   repo      (opcional) Enlace al código en GitHub. Si existe, el modal
+ *             muestra un botón "Ver código".
  *   detail    Contenido del modal:
  *               role     Rol · contexto · fecha.
  *               intro    Párrafo introductorio.
@@ -48,6 +50,7 @@ export const projects = [
     year: '2026',
     span: 'sp2',
     image: 'assets/images/iso-secure.png',
+    repo: 'https://github.com/Agustin1231/iso_secure',
     summary: 'Plataforma SGSI conforme a ISO/IEC 27001:2022 — KPIs, incidentes, controles, riesgos y auditoría. Modelado de amenazas con PASTA + STRIDE sobre API REST en capas.',
     tags: ['React', 'FastAPI', 'PostgreSQL', 'JWT + RBAC'],
     detail: {
@@ -119,6 +122,48 @@ export const projects = [
         'Ponencia en el Congreso de Tecnologías de la Universidad ECCI.',
       ],
       tags: ['PostGIS', 'SIG', 'Liderazgo', 'UI'],
+    },
+  },
+  {
+    id: 'vocacional',
+    title: 'Test Vocacional',
+    year: '2026',
+    span: 'sp3',
+    image: 'assets/images/test-vocacional.svg',
+    repo: 'https://github.com/Agustin1231/test-vocacional',
+    summary: 'Aplicación que aplica un test vocacional y orienta a estudiantes hacia programas académicos según su perfil, con un asesor de IA desacoplado.',
+    tags: ['Angular', '.NET 8', 'LangGraph', 'Docker'],
+    detail: {
+      role: 'Desarrolladora Front-End · Proyecto en equipo · 2026',
+      intro: 'Plataforma web que aplica un test vocacional y direcciona a cada estudiante hacia los programas académicos que mejor encajan con su perfil. Arquitectura por servicios, contract-first.',
+      points: [
+        'Desarrollo del frontend en Angular (SPA).',
+        'Integración con el backend en .NET 8 (Clean Architecture) a través de un contrato REST.',
+        'Chat de asesor con IA que pasa siempre por el backend: el navegador nunca guarda llaves de API.',
+        'Servicios contenerizados y orquestados con Docker Compose.',
+      ],
+      tags: ['Angular', '.NET 8', 'LangGraph', 'API REST', 'Docker'],
+    },
+  },
+  {
+    id: 'saberpro',
+    title: 'Prep Saber Pro',
+    year: '2026',
+    span: 'sp3',
+    image: 'assets/images/saber-pro.svg',
+    repo: 'https://github.com/Natam19/pruebaspro',
+    summary: 'App para preparar el examen Saber Pro del ICFES: estudio por módulos, simulacros con temporizador, calificación, revisión y seguimiento del progreso.',
+    tags: ['React', 'Vite', 'Docker'],
+    detail: {
+      role: 'Desarrolladora · Proyecto personal · 2026',
+      intro: 'Aplicación web para prepararse para el Saber Pro: módulos genéricos y específicos de ingeniería, simulacros configurables y revisión pregunta por pregunta.',
+      points: [
+        'Simulacros configurables (5 a 50 preguntas) con temporizador de ritmo real.',
+        'Calificación por módulo y revisión con la respuesta correcta y su explicación.',
+        'Práctica de escritura con temporizador y contador de palabras.',
+        'Historial de progreso guardado en el navegador (localStorage).',
+      ],
+      tags: ['React 18', 'Vite', 'React Router', 'Docker', 'nginx'],
     },
   },
 ];

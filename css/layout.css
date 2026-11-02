@@ -239,3 +239,34 @@
   #contacto .cta { flex-wrap: nowrap; gap: 16px; align-items: center; }
   #contacto .cta .ghost { white-space: nowrap; }
 }
+
+/* --- Hero con foto --- */
+.hgrid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; align-items: center; }
+.hphoto { margin: 0; position: relative; justify-self: end; }
+.hphoto::before {
+  content: ""; position: absolute; inset: -14px; border-radius: 40% 60% 55% 45% / 45% 40% 60% 55%;
+  background: linear-gradient(135deg, var(--ac, #7C3AED), #C026D3); opacity: .9; z-index: 0;
+  filter: blur(.5px);
+}
+.hphoto img {
+  position: relative; z-index: 1; display: block; width: 340px; height: 340px; object-fit: cover;
+  border-radius: 40% 60% 55% 45% / 45% 40% 60% 55%;
+  border: 6px solid var(--bg);
+}
+@media (max-width: 920px) {
+  .hgrid { grid-template-columns: 1fr; gap: 36px; }
+  .hphoto { justify-self: start; grid-row: 1; }
+  .hphoto img { width: 180px; height: 180px; }
+}
+
+/* --- Franja de logros --- */
+.stats { border-bottom: 1px solid var(--line); padding: 42px 0; }
+.sgrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.stat { display: flex; flex-direction: column; gap: 6px; padding-left: 18px; border-left: 3px solid color-mix(in srgb, var(--ac, #7C3AED) 70%, transparent); }
+.sn {
+  font-family: var(--font-head); font-size: clamp(30px, 3.2vw, 44px); font-weight: 700; letter-spacing: -.03em; line-height: 1;
+  background: linear-gradient(100deg, var(--ac, #7C3AED), #C026D3); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.dark .sn { background-image: linear-gradient(100deg, #C4B5FD, #F0ABFC); }
+.sl { font-size: 14px; line-height: 1.45; color: var(--mut); }
+@media (max-width: 920px) { .sgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 30px; } }

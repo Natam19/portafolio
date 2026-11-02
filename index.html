@@ -8,6 +8,16 @@
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
+  <!-- Vista previa al compartir el enlace (LinkedIn, WhatsApp, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Natalia Moncaleano — Portafolio">
+  <meta property="og:description" content="Analista de Datos y BI · IA · Ciberseguridad. Proyectos con Power BI, SQL, Python, Spark y seguridad de la información.">
+  <meta property="og:url" content="https://natalia.agustinynatalia.site/">
+  <meta property="og:image" content="https://natalia.agustinynatalia.site/assets/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
   <!-- Hojas de estilo modulares -->
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/base.css">
@@ -24,6 +34,7 @@
         <a class="lg" href="#top">NM<span class="lgd">.</span></a>
         <nav class="hnav">
           <a class="nl" href="#proyectos">Proyectos</a>
+          <a class="nl" href="#publicaciones">Publicaciones</a>
           <a class="nl" href="#experiencia">Experiencia</a>
           <a class="nl" href="#formacion">Formación</a>
           <a class="nl" href="#contacto">Contacto</a>
@@ -37,7 +48,8 @@
 
     <!-- ============================== Hero ============================== -->
     <section class="hero">
-      <div class="wrap">
+      <div class="wrap hgrid">
+        <div class="htext">
         <p class="lbl">Analista de Datos · Business Intelligence</p>
         <h1 class="h1">Convierto datos en decisiones <span class="it">claras y seguras.</span></h1>
         <p class="sub">Soy Natalia Moncaleano, analista de datos en Bogotá y estudiante de Ingeniería de Sistemas. Trabajo en Business Intelligence con Power BI, MySQL y Azure: modelo datos, construyo tableros y traduzco información compleja en decisiones, apoyada en IA y ciberseguridad.</p>
@@ -47,13 +59,28 @@
         </div>
         <div class="meta">
           <span class="chip">Bogotá, Colombia</span>
-          <a class="chip" href="tel:+573053843369">+57 305 384 3369</a>
-          <a class="chip" href="mailto:nattymoncaleanomontero@gmail.com">nattymoncaleanomontero@gmail.com</a>
+          <a class="chip" href="https://www.linkedin.com/in/natalia-moncaleano-montero" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a class="chip" href="https://github.com/Natam19" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a class="chip chip-ac" href="assets/CV-Natalia-Moncaleano.pdf" download>Descargar CV ↓</a>
         </div>
+        </div>
+        <figure class="hphoto">
+          <img src="assets/images/natalia.jpg" alt="Natalia Moncaleano" width="460" height="460">
+        </figure>
       </div>
 
       <!-- Marquesina de tecnologías (poblada por JS) -->
       <div class="mq"><div id="skills-marquee"></div></div>
+    </section>
+
+    <!-- ============================ Logros ============================= -->
+    <section class="stats">
+      <div class="wrap sgrid">
+        <div class="stat"><span class="sn">6,7 M</span><span class="sl">registros procesados con Apache Spark</span></div>
+        <div class="stat"><span class="sn">93</span><span class="sl">controles ISO 27001 en una plataforma</span></div>
+        <div class="stat"><span class="sn">NASA</span><span class="sl">Space Apps Challenge 2024</span></div>
+        <div class="stat"><span class="sn">ECCI</span><span class="sl">Ponente en el Congreso de Tecnologías</span></div>
+      </div>
     </section>
 
     <!-- =========================== Proyectos =========================== -->
@@ -65,17 +92,49 @@
             <p class="lbl">Proyectos destacados</p>
             <h2 class="h2">Ideas que ya son <span class="it">producto</span></h2>
           </div>
-          <p class="shp">Cinco proyectos, cinco problemas reales: salud, seguridad de la información, datos masivos y territorio.</p>
+          <p class="shp">Siete proyectos, siete problemas reales: salud, seguridad de la información, datos masivos, territorio y educación.</p>
         </div>
         <!-- Tarjetas pobladas por JS desde js/data/projects.js -->
         <div class="pgrid" id="projects-grid"></div>
       </div>
     </section>
 
+    <!-- ========================= Publicaciones ======================== -->
+    <section class="sec bord" id="publicaciones">
+      <div class="wrap">
+        <div class="shead">
+          <span class="snum">02</span>
+          <div class="stitle">
+            <p class="lbl">Publicaciones</p>
+            <h2 class="h2">Lo que comparto <span class="it">en LinkedIn</span></h2>
+          </div>
+          <p class="shp">Explico tecnología con carruseles: seguridad, IA y datos contados de forma clara.</p>
+        </div>
+        <div class="postgrid">
+          <a class="post" href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7522000475324555265/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/images/post-iso-secure.jpg" alt="Carrusel ISO_SECURE">
+            <div class="postb">
+              <span class="postk">Ciberseguridad · ISO 27001</span>
+              <span class="postt">ISO_SECURE: la ISO 27001 en un panel medible</span>
+              <span class="more">Ver en LinkedIn ↗</span>
+            </div>
+          </a>
+          <a class="post" href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7523073654797094912/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/images/post-claude-duet.jpg" alt="Carrusel Claude Duet">
+            <div class="postb">
+              <span class="postk">IA · Seguridad</span>
+              <span class="postt">Claude Duet: cómo se diseña un agente de IA seguro</span>
+              <span class="more">Ver en LinkedIn ↗</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- ========================== Cómo trabajo ========================= -->
     <section class="sec bord">
       <div class="wrap statg">
-        <span class="snum">02</span>
+        <span class="snum">03</span>
         <div>
           <p class="lbl">Cómo trabajo</p>
           <h2 class="h2">Del requerimiento <span class="it">al deploy</span></h2>
@@ -88,7 +147,7 @@
     <section class="sec bord" id="experiencia">
       <div class="wrap">
         <div class="shead">
-          <span class="snum">03</span>
+          <span class="snum">04</span>
           <div class="stitle">
             <p class="lbl">Experiencia</p>
             <h2 class="h2">De la academia <span class="it">a producción</span></h2>
@@ -103,7 +162,7 @@
     <section class="sec bord" id="formacion">
       <div class="wrap">
         <div class="shead">
-          <span class="snum">04</span>
+          <span class="snum">05</span>
           <div class="stitle">
             <p class="lbl">Formación</p>
             <h2 class="h2">Siempre <span class="it">aprendiendo</span></h2>
@@ -129,7 +188,7 @@
         <h2 class="h1">¿Creamos algo <span class="it">juntos?</span></h2>
         <div class="cta">
           <a class="pill" href="mailto:nattymoncaleanomontero@gmail.com">Escríbeme</a>
-          <a class="ghost" href="tel:+573053843369">+57 305 384 3369</a>
+          <a class="ghost" href="https://www.linkedin.com/in/natalia-moncaleano-montero" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
         </div>
         <div class="fbot">
           <span>Bogotá, Colombia</span>
