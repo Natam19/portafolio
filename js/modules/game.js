@@ -13,7 +13,7 @@
 import { getLang, onLangChange } from './lang.js';
 
 const THREATS = ['malware', 'phishing', 'SQLi', 'DDoS', 'ransomware', 'XSS', 'spyware', 'botnet'];
-const BG = 'rgba(21, 17, 43, 0.28)'; // estela: el fondo se pinta semitransparente
+const BG = 'rgba(21, 17, 43, 0.35)'; // estela: el fondo se pinta semitransparente
 const SHIP = '#C4B5FD';
 const ROCK = 'rgba(240, 171, 252, 0.85)';
 const TEXT = 'rgba(233, 230, 250, 0.75)';
@@ -27,6 +27,13 @@ export function initGame(box) {
   const canvas = box?.querySelector('canvas');
   if (!canvas || !canvas.getContext) return;
   const ctx = canvas.getContext('2d');
+  // Capa de textos encima: se limpia en cada cuadro, así los nombres y el
+  // marcador quedan nítidos (la estela solo la llevan las figuras).
+  const hud = document.createElement('canvas');
+  hud.className = 'ghud';
+  hud.setAttribute('aria-hidden', 'true');
+  canvas.after(hud);
+  const tx = hud.getContext('2d');
   const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
   let w = 0, h = 0, raf = 0, running = false;
@@ -41,6 +48,9 @@ export function initGame(box) {
     canvas.width = Math.round(w * dpr);
     canvas.height = Math.round(h * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    hud.width = canvas.width;
+    hud.height = canvas.height;
+    tx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.fillStyle = '#15112B';
     ctx.fillRect(0, 0, w, h);
   }
@@ -163,12 +173,16 @@ export function initGame(box) {
   function draw() {
     ctx.fillStyle = BG;
     ctx.fillRect(0, 0, w, h);
+    tx.clearRect(0, 0, w, h);
 
-    // Amenazas.
-    ctx.lineWidth = 1.6;
-    ctx.font = '600 10.5px ui-monospace, SFMono-Regular, Menlo, monospace';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
+    // Amenazas (con brillo neón).
+    ctx.lineWidth = 1.8;
+    ctx.shadowBlur = 12;
+    ctx.shadowColor = ROCK;
+    tx.font = '600 10.5px ui-monospace, SFMono-Regular, Menlo, monospace';
+    tx.textAlign = 'center';
+    tx.textBaseline = 'middle';
+    tx.fillStyle = TEXT;
     for (const r of rocks) {
       ctx.save();
       ctx.translate(r.x, r.y);
@@ -183,10 +197,11 @@ export function initGame(box) {
       ctx.closePath();
       ctx.stroke();
       ctx.restore();
-      if (r.radius > 18) { ctx.fillStyle = TEXT; ctx.fillText(r.label, r.x, r.y); }
+      if (r.radius > 18) tx.fillText(r.label, r.x, r.y);
     }
 
     // Disparos y chispas.
+    ctx.shadowColor = SHIP;
     ctx.fillStyle = SHIP;
     for (const b of bullets) { ctx.beginPath(); ctx.arc(b.x, b.y, 2.2, 0, Math.PI * 2); ctx.fill(); }
     for (const s of sparks) {
@@ -209,13 +224,13 @@ export function initGame(box) {
       ctx.beginPath(); ctx.moveTo(-7, -4); ctx.lineTo(-15, 0); ctx.lineTo(-7, 4); ctx.stroke();
     }
     ctx.restore();
+    ctx.shadowBlur = 0;
 
     // Marcador.
-    ctx.fillStyle = TEXT;
-    ctx.textAlign = 'left';
-    ctx.textBaseline = 'top';
-    ctx.font = '600 12px ui-monospace, SFMono-Regular, Menlo, monospace';
-    ctx.fillText(`${LABELS[getLang()].score}: ${score}`, 14, 14);
+    tx.textAlign = 'left';
+    tx.textBaseline = 'top';
+    tx.font = '600 12px ui-monospace, SFMono-Regular, Menlo, monospace';
+    tx.fillText(`${LABELS[getLang()].score}: ${score}`, 14, 14);
   }
 
   function loop() {
