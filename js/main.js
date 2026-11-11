@@ -14,6 +14,7 @@ import { initLang, onLangChange } from './modules/lang.js';
 import { initNet } from './modules/net.js';
 import { initCounters, refreshCounters } from './modules/counters.js';
 import { initDemo } from './modules/demo.js';
+import { initGame } from './modules/game.js';
 
 function renderData() {
   renderProjects(document.getElementById('projects-grid'));
@@ -47,6 +48,7 @@ function init() {
   initNet(document.getElementById('hero-net'));
   initCounters();
   initDemo();
+  initGame(document.getElementById('game'));
 
   // Al cambiar de idioma se vuelve a pintar lo que viene de datos.
   onLangChange(() => {
