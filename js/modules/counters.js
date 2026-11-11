@@ -3,7 +3,7 @@
  * (elementos con data-count; data-dec = decimales, data-suffix = sufijo).
  * Usan coma decimal en español y punto en inglés.
  */
-import { getLang } from './lang.js?v=20261111';
+import { getLang } from './lang.js?v=2026111102';
 
 function format(value, dec) {
   const s = value.toFixed(dec);

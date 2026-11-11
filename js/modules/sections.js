@@ -2,12 +2,12 @@
  * Render de las secciones alimentadas por datos: marquesina de skills,
  * rejilla de proyectos, experiencia y formación.
  */
-import { el, mount } from './dom.js?v=20261111';
-import { openModal } from './modal.js?v=20261111';
-import { projects } from '../data/projects.js?v=20261111';
-import { skills, experience, education, certifications } from '../data/site.js?v=20261111';
-import { projectsEn, experienceEn, educationEn, certificationsEn } from '../data/en.js?v=20261111';
-import { localize, ui } from './lang.js?v=20261111';
+import { el, mount } from './dom.js?v=2026111102';
+import { openModal } from './modal.js?v=2026111102';
+import { projects } from '../data/projects.js?v=2026111102';
+import { skills, experience, education, certifications } from '../data/site.js?v=2026111102';
+import { projectsEn, experienceEn, educationEn, certificationsEn } from '../data/en.js?v=2026111102';
+import { localize, ui } from './lang.js?v=2026111102';
 
 /** Proyecto en el idioma actual. */
 export const projectFor = (p) => localize(p, projectsEn[p.id]);

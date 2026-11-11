@@ -108,7 +108,7 @@ export const experienceEn = [
   {
     role: 'Web Developer',
     description: 'Scalable, high-performance web solutions for the Spanish market: information architecture, UX-centered navigation, SEO and conversion-oriented WordPress.',
-    period: 'Dec 2025 — Present',
+    period: 'Dec 2025 — Jun 2026',
     place: 'Málaga, Spain · remote',
   },
   {

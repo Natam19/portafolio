@@ -6,10 +6,12 @@
  *   contenido (con una animación corta).
  * - El contenido que se pinta desde JS (proyectos, experiencia, formación)
  *   se combina con las traducciones de data/en.js mediante localize().
- * - El idioma elegido se recuerda en localStorage. Si la persona nunca eligió
- *   y su navegador no está en español, la página arranca en inglés.
+ * - La página arranca en el idioma del navegador: español si está en
+ *   español, inglés en cualquier otro caso. El botón ES | EN lo cambia, y esa
+ *   elección se recuerda solo durante la visita (sessionStorage); en la
+ *   próxima visita vuelve a mandar el idioma del navegador.
  */
-import { uiEs, uiEn } from '../data/en.js?v=20261111';
+import { uiEs, uiEn } from '../data/en.js?v=2026111102';
 
 const STORAGE_KEY = 'nm-portfolio-lang';
 const listeners = [];
@@ -74,15 +76,19 @@ function applyStatic(animate) {
 
 export function setLang(lang, animate = true) {
   current = lang === 'en' ? 'en' : 'es';
-  try { localStorage.setItem(STORAGE_KEY, current); } catch (_) { /* modo privado */ }
+  try { sessionStorage.setItem(STORAGE_KEY, current); } catch (_) { /* modo privado */ }
   applyStatic(animate);
   listeners.forEach((fn) => fn(current));
 }
 
 export function initLang() {
   let saved = null;
-  try { saved = localStorage.getItem(STORAGE_KEY); } catch (_) { /* modo privado */ }
-  const browserEs = (navigator.language || 'es').toLowerCase().startsWith('es');
+  try {
+    saved = sessionStorage.getItem(STORAGE_KEY);
+    localStorage.removeItem(STORAGE_KEY); // elección guardada por la versión anterior
+  } catch (_) { /* modo privado */ }
+  const browser = (navigator.languages?.[0] || navigator.language || 'es').toLowerCase();
+  const browserEs = browser.startsWith('es');
   current = saved || (browserEs ? 'es' : 'en');
   applyStatic(false);
 

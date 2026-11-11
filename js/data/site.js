@@ -28,7 +28,7 @@ export const experience = [
     role: 'Desarrolladora Web',
     org: 'EH2 Ingeniería',
     description: 'Soluciones web escalables y de alto rendimiento para el mercado español: arquitectura de la información, navegación centrada en UX, SEO y WordPress orientados a conversión.',
-    period: 'Dic 2025 — Actualidad',
+    period: 'Dic 2025 — Jun 2026',
     place: 'Málaga, España · remoto',
   },
   {
