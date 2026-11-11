@@ -9,7 +9,7 @@
  * - El idioma elegido se recuerda en localStorage. Si la persona nunca eligió
  *   y su navegador no está en español, la página arranca en inglés.
  */
-import { uiEs, uiEn } from '../data/en.js';
+import { uiEs, uiEn } from '../data/en.js?v=20261111';
 
 const STORAGE_KEY = 'nm-portfolio-lang';
 const listeners = [];
