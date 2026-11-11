@@ -12,8 +12,8 @@
  */
 import { getLang } from './lang.js';
 
-const COLOR = '0, 174, 255';  // azul neón (r, g, b)
-const BG = '7, 11, 20';       // fondo casi negro (r, g, b)
+const COLOR = '168, 85, 247'; // morado neón del portafolio (r, g, b)
+const BG = '13, 10, 30';      // fondo morado casi negro (r, g, b)
 
 export function initGame(box) {
   const canvas = box?.querySelector('canvas');
