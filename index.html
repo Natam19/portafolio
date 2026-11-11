@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/motion.css">
 </head>
 <body>
   <div class="pg" id="top">
@@ -33,36 +34,38 @@
       <div class="wrap hin">
         <a class="lg" href="#top">NM<span class="lgd">.</span></a>
         <nav class="hnav">
-          <a class="nl" href="#proyectos">Proyectos</a>
-          <a class="nl" href="#publicaciones">Publicaciones</a>
-          <a class="nl" href="#experiencia">Experiencia</a>
-          <a class="nl" href="#formacion">Formación</a>
-          <a class="nl" href="#contacto">Contacto</a>
+          <a class="nl" href="#proyectos" data-en="Projects">Proyectos</a>
+          <a class="nl" href="#publicaciones" data-en="Posts">Publicaciones</a>
+          <a class="nl" href="#experiencia" data-en="Experience">Experiencia</a>
+          <a class="nl" href="#formacion" data-en="Education">Formación</a>
+          <a class="nl" href="#contacto" data-en="Contact">Contacto</a>
         </nav>
         <div class="hactions">
+          <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-lang="es" aria-pressed="true">ES</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
           <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Cambiar tema">☾</button>
-          <a class="pill sm" href="mailto:nattymoncaleanomontero@gmail.com">Escríbeme</a>
+          <a class="pill sm" href="mailto:nattymoncaleanomontero@gmail.com" data-en="Email me">Escríbeme</a>
         </div>
       </div>
     </header>
 
     <!-- ============================== Hero ============================== -->
     <section class="hero">
+      <canvas class="hnet" id="hero-net" aria-hidden="true"></canvas>
       <div class="wrap hgrid">
         <div class="htext">
-        <p class="avail"><span class="avd"></span>Disponible para prácticas</p>
-        <p class="lbl">Ingeniería de Sistemas · Datos · IA · Ciberseguridad</p>
-        <h1 class="h1">Convierto datos en decisiones <span class="it">claras y seguras.</span></h1>
-        <p class="sub">Soy Natalia Moncaleano, estudiante de Ingeniería de Sistemas en Bogotá. Me muevo entre datos, inteligencia artificial y ciberseguridad: modelo datos y construyo tableros en Power BI, desarrollo aplicaciones con IA y diseño sistemas pensando en la seguridad desde el principio.</p>
+        <p class="avail" data-en='<span class="avd"></span>Available for internships'><span class="avd"></span>Disponible para prácticas</p>
+        <p class="lbl" data-en="Systems Engineering · Data · AI · Cybersecurity">Ingeniería de Sistemas · Datos · IA · Ciberseguridad</p>
+        <h1 class="h1" data-en='I turn data into <span class="it">clear, secure decisions.</span>'>Convierto datos en decisiones <span class="it">claras y seguras.</span></h1>
+        <p class="sub" data-en="I’m Natalia Moncaleano, a Systems Engineering student in Bogotá. I work across data, artificial intelligence and cybersecurity: I model data and build Power BI dashboards, develop AI-powered applications and design systems with security in mind from day one.">Soy Natalia Moncaleano, estudiante de Ingeniería de Sistemas en Bogotá. Me muevo entre datos, inteligencia artificial y ciberseguridad: modelo datos y construyo tableros en Power BI, desarrollo aplicaciones con IA y diseño sistemas pensando en la seguridad desde el principio.</p>
         <div class="cta">
-          <a class="pill" href="mailto:nattymoncaleanomontero@gmail.com">Trabajemos juntos</a>
-          <a class="ghost" href="#proyectos">Ver proyectos ↓</a>
+          <a class="pill" href="mailto:nattymoncaleanomontero@gmail.com" data-en="Let’s work together">Trabajemos juntos</a>
+          <a class="ghost" href="#proyectos" data-en="See projects ↓">Ver proyectos ↓</a>
         </div>
         <div class="meta">
           <span class="chip">Bogotá, Colombia</span>
           <a class="chip" href="https://www.linkedin.com/in/natalia-moncaleano-montero" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
           <a class="chip" href="https://github.com/Natam19" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-          <a class="chip chip-ac" href="assets/CV-Natalia-Moncaleano.pdf" download>Descargar CV ↓</a>
+          <a class="chip chip-ac" href="assets/CV-Natalia-Moncaleano.pdf" download data-en="Download CV ↓">Descargar CV ↓</a>
         </div>
         </div>
         <figure class="hphoto">
@@ -77,10 +80,34 @@
     <!-- ============================ Logros ============================= -->
     <section class="stats">
       <div class="wrap sgrid">
-        <div class="stat"><span class="sn">6,7 M</span><span class="sl">registros procesados con Apache Spark</span></div>
-        <div class="stat"><span class="sn">93</span><span class="sl">controles ISO 27001 en una plataforma</span></div>
+        <div class="stat"><span class="sn" data-count="6.7" data-dec="1" data-suffix=" M">6,7 M</span><span class="sl" data-en="records processed with Apache Spark">registros procesados con Apache Spark</span></div>
+        <div class="stat"><span class="sn" data-count="93">93</span><span class="sl" data-en="ISO 27001 controls in one platform">controles ISO 27001 en una plataforma</span></div>
         <div class="stat"><span class="sn">NASA</span><span class="sl">Space Apps Challenge 2024</span></div>
-        <div class="stat"><span class="sn">ECCI</span><span class="sl">Ponente en el Congreso de Tecnologías</span></div>
+        <div class="stat"><span class="sn">ECCI</span><span class="sl" data-en="Speaker at the Technology Congress">Ponente en el Congreso de Tecnologías</span></div>
+      </div>
+    </section>
+
+    <!-- ========================= Demo en vivo ========================= -->
+    <section class="sec bord demo-sec" id="demo">
+      <div class="wrap dgrid">
+        <div class="dintro">
+          <p class="lbl" data-en="Live demo">Demo en vivo</p>
+          <h2 class="h2" data-en='From query <span class="it">to dashboard</span>'>De la consulta <span class="it">al tablero</span></h2>
+          <p class="shp" data-en="This is how I work with data: I write the query, process it and turn it into a clear visual. Pick a project and watch it build.">Así trabajo con los datos: escribo la consulta, la proceso y la convierto en un visual claro. Elige un proyecto y míralo armarse.</p>
+          <div class="dtabs" role="group" aria-label="Proyecto">
+            <button type="button" data-demo="health" aria-pressed="true">HealthAI</button>
+            <button type="button" data-demo="iso" aria-pressed="false">ISO_SECURE</button>
+            <button type="button" data-demo="pulso" aria-pressed="false">Pulso</button>
+          </div>
+        </div>
+        <div class="dcard" aria-live="polite">
+          <div class="dbar"><span></span><span></span><span></span><b id="demo-file">riesgo.sql</b></div>
+          <pre class="dcode"><code id="demo-code"></code></pre>
+          <div class="dviz">
+            <div class="dkpi"><span class="dkn" id="demo-kpi">0</span><span class="dkl" id="demo-kpil"></span></div>
+            <div class="dchart" id="demo-chart"></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -90,10 +117,10 @@
         <div class="shead">
           <span class="snum">01</span>
           <div class="stitle">
-            <p class="lbl">Proyectos destacados</p>
-            <h2 class="h2">Ideas que ya son <span class="it">producto</span></h2>
+            <p class="lbl" data-en="Selected projects">Proyectos destacados</p>
+            <h2 class="h2" data-en='Ideas that are already <span class="it">products</span>'>Ideas que ya son <span class="it">producto</span></h2>
           </div>
-          <p class="shp">Siete proyectos, siete problemas reales: salud, seguridad de la información, datos masivos, territorio y educación.</p>
+          <p class="shp" data-en="Seven projects, seven real problems: health, information security, big data, territory and education.">Siete proyectos, siete problemas reales: salud, seguridad de la información, datos masivos, territorio y educación.</p>
         </div>
         <!-- Tarjetas pobladas por JS desde js/data/projects.js -->
         <div class="pgrid" id="projects-grid"></div>
@@ -106,25 +133,25 @@
         <div class="shead">
           <span class="snum">02</span>
           <div class="stitle">
-            <p class="lbl">Publicaciones</p>
-            <h2 class="h2">Lo que comparto <span class="it">en LinkedIn</span></h2>
+            <p class="lbl" data-en="Posts">Publicaciones</p>
+            <h2 class="h2" data-en='What I share <span class="it">on LinkedIn</span>'>Lo que comparto <span class="it">en LinkedIn</span></h2>
           </div>
-          <p class="shp">Explico tecnología con carruseles: seguridad, IA y datos contados de forma clara.</p>
+          <p class="shp" data-en="I explain technology through carousels: security, AI and data, told clearly.">Explico tecnología con carruseles: seguridad, IA y datos contados de forma clara.</p>
         </div>
         <div class="postgrid">
           <a class="post" href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7522000475324555265/" target="_blank" rel="noopener noreferrer">
             <img src="assets/images/post-iso-secure.jpg" alt="Carrusel ISO_SECURE">
             <div class="postb">
-              <span class="postk">Ciberseguridad · ISO 27001</span>
-              <span class="postt">ISO_SECURE: la ISO 27001 en un panel medible</span>
+              <span class="postk" data-en="Cybersecurity · ISO 27001">Ciberseguridad · ISO 27001</span>
+              <span class="postt" data-en="ISO_SECURE: ISO 27001 in a measurable dashboard">ISO_SECURE: la ISO 27001 en un panel medible</span>
               <span class="more">Ver en LinkedIn ↗</span>
             </div>
           </a>
           <a class="post" href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7523073654797094912/" target="_blank" rel="noopener noreferrer">
             <img src="assets/images/post-claude-duet.jpg" alt="Carrusel Claude Duet">
             <div class="postb">
-              <span class="postk">IA · Seguridad</span>
-              <span class="postt">Claude Duet: cómo se diseña un agente de IA seguro</span>
+              <span class="postk" data-en="AI · Security">IA · Seguridad</span>
+              <span class="postt" data-en="Claude Duet: how to design a secure AI agent">Claude Duet: cómo se diseña un agente de IA seguro</span>
               <span class="more">Ver en LinkedIn ↗</span>
             </div>
           </a>
@@ -138,31 +165,31 @@
         <div class="shead">
           <span class="snum">03</span>
           <div class="stitle">
-            <p class="lbl">Cómo trabajo</p>
-            <h2 class="h2">Del requerimiento <span class="it">al deploy</span></h2>
+            <p class="lbl" data-en="How I work">Cómo trabajo</p>
+            <h2 class="h2" data-en='From requirement <span class="it">to deploy</span>'>Del requerimiento <span class="it">al deploy</span></h2>
           </div>
-          <p class="shp">Si no es usable, no escala. Y si no es seguro, no sirve.</p>
+          <p class="shp" data-en="If it isn’t usable, it doesn’t scale. And if it isn’t secure, it doesn’t work.">Si no es usable, no escala. Y si no es seguro, no sirve.</p>
         </div>
         <ol class="steps">
           <li class="step">
             <span class="stn">01</span>
-            <h3 class="stt">Entender</h3>
-            <p class="std">Escucho la necesidad, analizo los requerimientos y entiendo los datos antes de proponer algo.</p>
+            <h3 class="stt" data-en="Understand">Entender</h3>
+            <p class="std" data-en="I listen to the need, analyze the requirements and understand the data before proposing anything.">Escucho la necesidad, analizo los requerimientos y entiendo los datos antes de proponer algo.</p>
           </li>
           <li class="step">
             <span class="stn">02</span>
-            <h3 class="stt">Diseñar</h3>
-            <p class="std">Defino la arquitectura y la información, y modelo las amenazas desde el inicio.</p>
+            <h3 class="stt" data-en="Design">Diseñar</h3>
+            <p class="std" data-en="I define the architecture and the information, and model threats from the start.">Defino la arquitectura y la información, y modelo las amenazas desde el inicio.</p>
           </li>
           <li class="step">
             <span class="stn">03</span>
-            <h3 class="stt">Construir</h3>
-            <p class="std">Paso del prototipo al código: tableros, APIs y aplicaciones pensadas para quien las usa.</p>
+            <h3 class="stt" data-en="Build">Construir</h3>
+            <p class="std" data-en="I move from prototype to code: dashboards, APIs and applications designed for the people who use them.">Paso del prototipo al código: tableros, APIs y aplicaciones pensadas para quien las usa.</p>
           </li>
           <li class="step">
             <span class="stn">04</span>
-            <h3 class="stt">Asegurar</h3>
-            <p class="std">Valido datos, controlo accesos y verifico que la solución sea confiable antes de entregarla.</p>
+            <h3 class="stt" data-en="Secure">Asegurar</h3>
+            <p class="std" data-en="I validate data, control access and make sure the solution is reliable before delivering it.">Valido datos, controlo accesos y verifico que la solución sea confiable antes de entregarla.</p>
           </li>
         </ol>
       </div>
@@ -174,8 +201,8 @@
         <div class="shead">
           <span class="snum">04</span>
           <div class="stitle">
-            <p class="lbl">Experiencia</p>
-            <h2 class="h2">De la academia <span class="it">a producción</span></h2>
+            <p class="lbl" data-en="Experience">Experiencia</p>
+            <h2 class="h2" data-en='From the classroom <span class="it">to production</span>'>De la academia <span class="it">a producción</span></h2>
           </div>
         </div>
         <!-- Filas pobladas por JS desde js/data/site.js -->
@@ -189,17 +216,17 @@
         <div class="shead">
           <span class="snum">05</span>
           <div class="stitle">
-            <p class="lbl">Formación</p>
-            <h2 class="h2">Siempre <span class="it">aprendiendo</span></h2>
+            <p class="lbl" data-en="Education">Formación</p>
+            <h2 class="h2" data-en='Always <span class="it">learning</span>'>Siempre <span class="it">aprendiendo</span></h2>
           </div>
         </div>
         <div class="fgrid">
           <div>
-            <h3 class="colh">Educación</h3>
+            <h3 class="colh" data-en="Education">Educación</h3>
             <div id="education-list"></div>
           </div>
           <div>
-            <h3 class="colh">Certificaciones e idiomas</h3>
+            <h3 class="colh" data-en="Certifications and languages">Certificaciones e idiomas</h3>
             <div id="certifications-list"></div>
           </div>
         </div>
@@ -209,10 +236,10 @@
     <!-- ============================ Contacto =========================== -->
     <footer class="sec" id="contacto">
       <div class="wrap">
-        <p class="lbl">Contacto</p>
-        <h2 class="h1">¿Creamos algo <span class="it">juntos?</span></h2>
+        <p class="lbl" data-en="Contact">Contacto</p>
+        <h2 class="h1" data-en='Shall we build something <span class="it">together?</span>'>¿Creamos algo <span class="it">juntos?</span></h2>
         <div class="cta">
-          <a class="pill" href="mailto:nattymoncaleanomontero@gmail.com">Escríbeme</a>
+          <a class="pill" href="mailto:nattymoncaleanomontero@gmail.com" data-en="Email me">Escríbeme</a>
           <a class="ghost" href="https://www.linkedin.com/in/natalia-moncaleano-montero" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
         </div>
         <div class="fbot">

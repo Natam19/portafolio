@@ -6,6 +6,11 @@ import { el, mount } from './dom.js';
 import { openModal } from './modal.js';
 import { projects } from '../data/projects.js';
 import { skills, experience, education, certifications } from '../data/site.js';
+import { projectsEn, experienceEn, educationEn, certificationsEn } from '../data/en.js';
+import { localize, ui } from './lang.js';
+
+/** Proyecto en el idioma actual. */
+export const projectFor = (p) => localize(p, projectsEn[p.id]);
 
 /** Marquesina de tecnologías (duplicada para el bucle infinito). */
 export function renderSkills(target) {
@@ -16,7 +21,8 @@ export function renderSkills(target) {
 
 /** Tarjetas de proyecto; al hacer clic abren el modal de detalle. */
 export function renderProjects(target) {
-  const cards = projects.map((p) =>
+  const list = projects.map(projectFor);
+  const cards = list.map((p) =>
     el('article', { class: `pcard ${p.span}` }, [
       el('div', { class: 'shot' }, [
         el('img', { class: 'cimg', src: p.image, alt: p.title }),
@@ -33,7 +39,7 @@ export function renderProjects(target) {
         ]),
         el('p', { class: 'pd', text: p.summary }),
         el('div', { class: 'tags' }, p.tags.map((t) => el('span', { class: 'tag', text: t }))),
-        el('span', { class: 'more', text: 'Ver proyecto →' }),
+        el('span', { class: 'more', text: ui('seeProject') }),
       ]),
     ])
   );
@@ -43,7 +49,7 @@ export function renderProjects(target) {
     card.querySelector('.pinf').addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        openModal(projects[i]);
+        openModal(list[i]);
       }
     });
   });
@@ -53,7 +59,7 @@ export function renderProjects(target) {
 
 /** Filas de experiencia. */
 export function renderExperience(target) {
-  const rows = experience.map((x) =>
+  const rows = experience.map((base, i) => localize(base, experienceEn[i])).map((x) =>
     el('div', { class: 'xrow' }, [
       el('div', {}, [
         el('div', { class: 'xr', text: x.role }),
@@ -80,6 +86,6 @@ function eduRow(item) {
 
 /** Columnas de formación: educación + certificaciones e idiomas. */
 export function renderFormation(eduTarget, certTarget) {
-  mount(eduTarget, education.map(eduRow));
-  mount(certTarget, certifications.map(eduRow));
+  mount(eduTarget, education.map((b, i) => eduRow(localize(b, educationEn[i]))));
+  mount(certTarget, certifications.map((b, i) => eduRow(localize(b, certificationsEn[i]))));
 }

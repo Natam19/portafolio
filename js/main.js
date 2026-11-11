@@ -1,6 +1,6 @@
 /**
- * Punto de entrada. Inicializa el tema y renderiza las secciones
- * alimentadas por datos cuando el DOM está listo.
+ * Punto de entrada. Inicializa idioma y tema, renderiza las secciones
+ * alimentadas por datos y arranca las animaciones cuando el DOM está listo.
  */
 import { initTheme, setAccent } from './modules/theme.js';
 import {
@@ -10,9 +10,25 @@ import {
   renderFormation,
 } from './modules/sections.js';
 import { initReveal } from './modules/reveal.js';
+import { initLang, onLangChange } from './modules/lang.js';
+import { initNet } from './modules/net.js';
+import { initCounters, refreshCounters } from './modules/counters.js';
+import { initDemo } from './modules/demo.js';
+
+function renderData() {
+  renderProjects(document.getElementById('projects-grid'));
+  renderExperience(document.getElementById('experience-list'));
+  renderFormation(
+    document.getElementById('education-list'),
+    document.getElementById('certifications-list'),
+  );
+}
 
 function init() {
   const page = document.getElementById('top');
+
+  // Idioma primero: el resto se pinta ya en el idioma elegido.
+  initLang();
 
   // Apariencia.
   setAccent('#7C3AED');
@@ -20,19 +36,23 @@ function init() {
 
   // Contenido dinámico.
   renderSkills(document.getElementById('skills-marquee'));
-  renderProjects(document.getElementById('projects-grid'));
-  renderExperience(document.getElementById('experience-list'));
-  renderFormation(
-    document.getElementById('education-list'),
-    document.getElementById('certifications-list'),
-  );
+  renderData();
 
   // Año dinámico en el pie.
   const yearEl = document.getElementById('footer-year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // Aparición al hacer scroll (respeta prefers-reduced-motion).
+  // Movimiento (todo respeta prefers-reduced-motion).
   initReveal();
+  initNet(document.getElementById('hero-net'));
+  initCounters();
+  initDemo();
+
+  // Al cambiar de idioma se vuelve a pintar lo que viene de datos.
+  onLangChange(() => {
+    renderData();
+    refreshCounters();
+  });
 }
 
 if (document.readyState === 'loading') {

@@ -34,6 +34,9 @@ function apply(pageEl, toggleBtn, dark) {
   pageEl.classList.toggle('dark', dark);
   if (toggleBtn) {
     toggleBtn.textContent = dark ? '☀' : '☾';
-    toggleBtn.setAttribute('aria-label', dark ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
+    const en = document.documentElement.lang === 'en';
+    toggleBtn.setAttribute('aria-label', dark
+      ? (en ? 'Switch to light theme' : 'Cambiar a tema claro')
+      : (en ? 'Switch to dark theme' : 'Cambiar a tema oscuro'));
   }
 }

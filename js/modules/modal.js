@@ -4,6 +4,7 @@
  * en lugar de renderizar un modal por proyecto.
  */
 import { el, mount } from './dom.js';
+import { ui } from './lang.js';
 
 let overlay;
 
@@ -36,13 +37,13 @@ export function openModal(project) {
   const card = el('div', { class: 'mod' }, [
     el('div', { class: 'mhead' }, [
       el('img', { class: 'mimg', src: image, alt: title }),
-      el('button', { class: 'mclose', 'aria-label': 'Cerrar', onClick: closeModal, text: '✕' }),
+      el('button', { class: 'mclose', 'aria-label': ui('close'), onClick: closeModal, text: '✕' }),
     ]),
     el('div', { class: 'mbody' }, [
       el('p', { class: 'mrole', text: detail.role }),
       el('h3', { class: 'mt', text: title }),
       el('p', { class: 'mp', text: detail.intro }),
-      el('h4', { class: 'mh4', text: 'Qué construí' }),
+      el('h4', { class: 'mh4', text: ui('built') }),
       el('ul', { class: 'mlist' }, detail.points.map((p) =>
         el('li', { class: 'mli' }, [el('span', { class: 'dt', text: '→' }), p])
       )),
@@ -55,13 +56,13 @@ export function openModal(project) {
           href: url,
           target: '_blank',
           rel: 'noopener noreferrer',
-        }, ['Ver en vivo ↗']) : null,
+        }, [ui('live')]) : null,
         repo ? el('a', {
           class: 'mlive mcode',
           href: repo,
           target: '_blank',
           rel: 'noopener noreferrer',
-        }, ['Ver código ↗']) : null,
+        }, [ui('code')]) : null,
       ]) : null,
     ]),
   ]);
