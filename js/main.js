@@ -15,6 +15,7 @@ import { initNet } from './modules/net.js?v=2026111205';
 import { initCounters, refreshCounters } from './modules/counters.js?v=2026111205';
 import { initDemo } from './modules/demo.js?v=2026111205';
 import { initGame } from './modules/game.js?v=2026111205';
+import { initAviso } from './modules/aviso.js?v=2026111205';
 
 function renderData() {
   renderProjects(document.getElementById('projects-grid'));
@@ -54,6 +55,9 @@ function init() {
   document.querySelectorAll('a[href*="CV-Natalia-Moncaleano"]').forEach((a) => {
     a.addEventListener('click', () => window.clarity?.('event', 'descarga_hoja_de_vida'));
   });
+
+  // Aviso por Telegram cuando alguien abre el portafolio.
+  initAviso();
 
   // Al cambiar de idioma se vuelve a pintar lo que viene de datos.
   onLangChange(() => {
