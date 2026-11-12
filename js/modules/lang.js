@@ -11,7 +11,7 @@
  *   elección se recuerda solo durante la visita (sessionStorage); en la
  *   próxima visita vuelve a mandar el idioma del navegador.
  */
-import { uiEs, uiEn } from '../data/en.js?v=2026111201';
+import { uiEs, uiEn } from '../data/en.js?v=2026111202';
 
 const STORAGE_KEY = 'nm-portfolio-lang';
 const listeners = [];
@@ -64,6 +64,10 @@ function applyStatic(animate) {
   document.querySelectorAll('[data-href-en]').forEach((a) => {
     if (a.dataset.hrefEs === undefined) a.dataset.hrefEs = a.getAttribute('href');
     a.setAttribute('href', current === 'en' ? a.dataset.hrefEn : a.dataset.hrefEs);
+  });
+  document.querySelectorAll('[data-aria-en]').forEach((el) => {
+    if (el.dataset.ariaEs === undefined) el.dataset.ariaEs = el.getAttribute('aria-label') || '';
+    el.setAttribute('aria-label', current === 'en' ? el.dataset.ariaEn : el.dataset.ariaEs);
   });
   document.documentElement.lang = current;
   const m = META[current];
