@@ -10,7 +10,7 @@
  *   llegó, idioma y si descargó la hoja de vida.
  * - Mientras WEBHOOK esté vacío no hace nada.
  */
-const WEBHOOK = ''; // URL del webhook de n8n (la entrega Rocky)
+const WEBHOOK = 'https://n8n.agustinynatalia.site/webhook/portafolio-visita'; // URL del webhook de n8n (la entrega Rocky)
 
 function soyYo() {
   try {
