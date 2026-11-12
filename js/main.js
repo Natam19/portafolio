@@ -2,19 +2,20 @@
  * Punto de entrada. Inicializa idioma y tema, renderiza las secciones
  * alimentadas por datos y arranca las animaciones cuando el DOM está listo.
  */
-import { initTheme, setAccent } from './modules/theme.js?v=2026111206';
+import { initTheme, setAccent } from './modules/theme.js?v=2026111207';
 import {
   renderSkills,
   renderProjects,
   renderExperience,
   renderFormation,
-} from './modules/sections.js?v=2026111206';
-import { initReveal } from './modules/reveal.js?v=2026111206';
-import { initLang, onLangChange } from './modules/lang.js?v=2026111206';
-import { initNet } from './modules/net.js?v=2026111206';
-import { initCounters, refreshCounters } from './modules/counters.js?v=2026111206';
-import { initDemo } from './modules/demo.js?v=2026111206';
-import { initGame } from './modules/game.js?v=2026111206';
+} from './modules/sections.js?v=2026111207';
+import { initReveal } from './modules/reveal.js?v=2026111207';
+import { initLang, onLangChange } from './modules/lang.js?v=2026111207';
+import { initNet } from './modules/net.js?v=2026111207';
+import { initCounters, refreshCounters } from './modules/counters.js?v=2026111207';
+import { initDemo } from './modules/demo.js?v=2026111207';
+import { initGame } from './modules/game.js?v=2026111207';
+import { initAviso } from './modules/aviso.js?v=2026111207';
 
 function renderData() {
   renderProjects(document.getElementById('projects-grid'));
@@ -54,6 +55,9 @@ function init() {
   document.querySelectorAll('a[href*="CV-Natalia-Moncaleano"]').forEach((a) => {
     a.addEventListener('click', () => window.umami?.track('descarga_hoja_de_vida'));
   });
+
+  // Aviso por Telegram cuando alguien abre el portafolio.
+  initAviso();
 
   // Al cambiar de idioma se vuelve a pintar lo que viene de datos.
   onLangChange(() => {
