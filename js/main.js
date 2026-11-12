@@ -2,19 +2,19 @@
  * Punto de entrada. Inicializa idioma y tema, renderiza las secciones
  * alimentadas por datos y arranca las animaciones cuando el DOM está listo.
  */
-import { initTheme, setAccent } from './modules/theme.js?v=2026111204';
+import { initTheme, setAccent } from './modules/theme.js?v=2026111205';
 import {
   renderSkills,
   renderProjects,
   renderExperience,
   renderFormation,
-} from './modules/sections.js?v=2026111204';
-import { initReveal } from './modules/reveal.js?v=2026111204';
-import { initLang, onLangChange } from './modules/lang.js?v=2026111204';
-import { initNet } from './modules/net.js?v=2026111204';
-import { initCounters, refreshCounters } from './modules/counters.js?v=2026111204';
-import { initDemo } from './modules/demo.js?v=2026111204';
-import { initGame } from './modules/game.js?v=2026111204';
+} from './modules/sections.js?v=2026111205';
+import { initReveal } from './modules/reveal.js?v=2026111205';
+import { initLang, onLangChange } from './modules/lang.js?v=2026111205';
+import { initNet } from './modules/net.js?v=2026111205';
+import { initCounters, refreshCounters } from './modules/counters.js?v=2026111205';
+import { initDemo } from './modules/demo.js?v=2026111205';
+import { initGame } from './modules/game.js?v=2026111205';
 
 function renderData() {
   renderProjects(document.getElementById('projects-grid'));
