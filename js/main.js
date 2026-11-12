@@ -2,19 +2,19 @@
  * Punto de entrada. Inicializa idioma y tema, renderiza las secciones
  * alimentadas por datos y arranca las animaciones cuando el DOM está listo.
  */
-import { initTheme, setAccent } from './modules/theme.js?v=2026111201';
+import { initTheme, setAccent } from './modules/theme.js?v=2026111204';
 import {
   renderSkills,
   renderProjects,
   renderExperience,
   renderFormation,
-} from './modules/sections.js?v=2026111201';
-import { initReveal } from './modules/reveal.js?v=2026111201';
-import { initLang, onLangChange } from './modules/lang.js?v=2026111201';
-import { initNet } from './modules/net.js?v=2026111201';
-import { initCounters, refreshCounters } from './modules/counters.js?v=2026111201';
-import { initDemo } from './modules/demo.js?v=2026111201';
-import { initGame } from './modules/game.js?v=2026111201';
+} from './modules/sections.js?v=2026111204';
+import { initReveal } from './modules/reveal.js?v=2026111204';
+import { initLang, onLangChange } from './modules/lang.js?v=2026111204';
+import { initNet } from './modules/net.js?v=2026111204';
+import { initCounters, refreshCounters } from './modules/counters.js?v=2026111204';
+import { initDemo } from './modules/demo.js?v=2026111204';
+import { initGame } from './modules/game.js?v=2026111204';
 
 function renderData() {
   renderProjects(document.getElementById('projects-grid'));
@@ -49,6 +49,11 @@ function init() {
   initCounters();
   initDemo();
   initGame(document.getElementById('game'));
+
+  // Estadísticas: marcar en Clarity cuando descargan la hoja de vida.
+  document.querySelectorAll('a[href*="CV-Natalia-Moncaleano"]').forEach((a) => {
+    a.addEventListener('click', () => window.clarity?.('event', 'descarga_hoja_de_vida'));
+  });
 
   // Al cambiar de idioma se vuelve a pintar lo que viene de datos.
   onLangChange(() => {

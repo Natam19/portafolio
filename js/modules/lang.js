@@ -11,7 +11,7 @@
  *   elección se recuerda solo durante la visita (sessionStorage); en la
  *   próxima visita vuelve a mandar el idioma del navegador.
  */
-import { uiEs, uiEn } from '../data/en.js?v=2026111201';
+import { uiEs, uiEn } from '../data/en.js?v=2026111204';
 
 const STORAGE_KEY = 'nm-portfolio-lang';
 const listeners = [];

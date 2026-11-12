@@ -165,3 +165,6 @@
   .step, .dbarv { transition: none; }
   .step:hover { transform: none; }
 }
+
+/* Nota de estadísticas en el pie de página */
+.fbot .fnote { flex-basis: 100%; font-size: 12px; opacity: .7; }

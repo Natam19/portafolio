@@ -3,8 +3,8 @@
  * Un único overlay que se rellena con los datos del proyecto seleccionado,
  * en lugar de renderizar un modal por proyecto.
  */
-import { el, mount } from './dom.js?v=2026111201';
-import { ui } from './lang.js?v=2026111201';
+import { el, mount } from './dom.js?v=2026111204';
+import { ui } from './lang.js?v=2026111204';
 
 let overlay;
 
