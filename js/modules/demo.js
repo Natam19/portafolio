@@ -4,7 +4,7 @@
  * levanta las barras del gráfico. Los valores son de ejemplo, salvo los
  * controles de ISO 27001:2022 (93 controles en 4 temas del Anexo A).
  */
-import { getLang, onLangChange } from './lang.js?v=2026111205';
+import { getLang, onLangChange } from './lang.js?v=2026111206';
 
 const DEMOS = {
   health: {

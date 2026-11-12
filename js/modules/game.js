@@ -10,7 +10,7 @@
  * - Se pausa fuera de pantalla o con la pestaña oculta. Con "reducir
  *   movimiento" se dibuja una sola escena quieta.
  */
-import { getLang } from './lang.js?v=2026111205';
+import { getLang } from './lang.js?v=2026111206';
 
 const COLOR = '168, 85, 247'; // morado neón del portafolio (r, g, b)
 const BG = '13, 10, 30';      // fondo morado casi negro (r, g, b)
